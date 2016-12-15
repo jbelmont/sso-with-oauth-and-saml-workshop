@@ -1,0 +1,34 @@
+{
+  "name": "sso-with-oauth-and-saml",
+  "version": "0.1.0",
+  "description": "CCS sixth session goes over jwt, Oauth2, and SAML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml.git"
+  },
+  "keywords": [
+    "nodejs",
+    "jwt",
+    "oauth",
+    "saml",
+    "authentication",
+    "authorization"
+  ],
+  "author": "Jean-Marcel Belmont",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml/issues"
+  },
+  "homepage": "https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml#readme",
+  "dependencies": {
+    "jsonwebtoken": "^7.2.1",
+    "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
