@@ -27,7 +27,9 @@
   "dependencies": {
     "dotenv": "^2.0.0",
     "jsonwebtoken": "^7.2.1",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "rethinkdb": "^2.3.3",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",

@@ -5,11 +5,11 @@ const {join} = require('path');
 // Load Environment Variables
 require(join(__dirname, 'config/config'))["dotEnvConfig"];
 
-const port = process.env["PORT"] || 8080;
+const port = process.env["PORT"] || 3000;
 
 var app = restify.createServer({
-  certificate:readFileSync(join(__dirname, 'path/to/server/certificate')),
-  key: readFileSync(join(__dirname, 'path/to/server/key')),
+  certificate: readFileSync(join(__dirname, 'ca/cert.pem')),
+  key: readFileSync(join(__dirname, 'ca/key.pem')),
   name: 'SSO with Oauth and SAML',
 });
 

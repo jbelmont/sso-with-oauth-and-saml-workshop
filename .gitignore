@@ -6,3 +6,6 @@
 
 # ENVIRONMENT variables
 /.env
+
+# Database models
+/rethinkdb_data
