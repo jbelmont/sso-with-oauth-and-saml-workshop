@@ -4,7 +4,8 @@
   "description": "CCS sixth session goes over jwt, Oauth2, and SAML",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --harmony app.js",
+    "debug": "node-inspector & node --inspect app.js"
   },
   "repository": {
     "type": "git",

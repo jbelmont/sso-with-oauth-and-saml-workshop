@@ -9,3 +9,6 @@
 
 # Database models
 /rethinkdb_data
+
+# vscode
+/.vscode

@@ -21,4 +21,6 @@ app.listen(port, () => {
 	console.log('server listening on port number', port);
 });
 
+// Load api endpoints.
 require('./routes')(app);
+require('./admin/createToken')(app);
