@@ -7,6 +7,7 @@ const winston = require('winston');
 const jwt = require('jsonwebtoken');
 
 const errorHandler = require('../errorHandler');
+const {responseCodes} = require('../constants/constants');
 
 const PATH = '/api/v1/';
 
@@ -22,7 +23,7 @@ const createToken = (req, res, next) => {
             winston.log('error', 'Error Creating json web token', {err});
             res.send(err);
         }
-        res.status(201).send({
+        res.send(responseCodes["created"], {
             adminToken: token
         });
         return next();
