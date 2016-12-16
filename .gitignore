@@ -1,2 +1,8 @@
 # Node Specific gitignore
 /node_modules
+
+# Server Keys
+/ca
+
+# ENVIRONMENT variables
+/.env

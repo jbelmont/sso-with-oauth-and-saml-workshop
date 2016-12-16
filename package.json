@@ -25,10 +25,16 @@
   },
   "homepage": "https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml#readme",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "jsonwebtoken": "^7.2.1",
     "restify": "^4.3.0"
   },
   "devDependencies": {
-    "ava": "^0.17.0"
+    "ava": "^0.17.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.8.0"
   }
 }
