@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --harmony app.js",
     "debug": "node-inspector & node --inspect app.js",
-    "test": "ava"
+    "test": "ava --verbose"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,9 @@
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.8.0"
+    "eslint-plugin-react": "^6.8.0",
+    "nock": "^9.0.2",
+    "sinon": "^1.17.6",
+    "supertest": "^2.0.1"
   }
 }
