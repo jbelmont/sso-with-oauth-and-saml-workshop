@@ -1,12 +1,10 @@
-"use strict";
+'use strict';
 
 const rethinkdb = require('rethinkdb');
 const winston = require('winston');
 const {join} = require('path');
 
-const users = require(join(__dirname, './users'))["users"];
-
-let connection;
+const users = require(join(__dirname, './users'))['users'];
 
 const DB = {
   DATABASE_NAME: process.env.DATABASE_NAME || 'ssowithoauth2andsaml',
@@ -17,19 +15,19 @@ const DB = {
 };
 
 function connectToRethinkDBServer() {
-    return rethinkdb
+  return rethinkdb
         .connect({
-            host : DB.host,
-            port : DB.port,
-            db: DB.DATABASE_NAME
+          host : DB.host,
+          port : DB.port,
+          db: DB.DATABASE_NAME
         })
         .then(connect => {
           process.env.connection = connect;
           return connect;
         })
         .catch((error) => {
-            winston.log('error', 'Database Connection Error', {error});
-            return error;
+          winston.log('error', 'Database Connection Error', {error});
+          return error;
         });
 }
 
@@ -43,7 +41,7 @@ function doesRethinkTableExist() {
 
 function createUsers(databaseExists) {
   if (!databaseExists) {
-      return createDB()
+    return createDB()
         .then(value => value);
   }
 }
@@ -92,8 +90,8 @@ function getUsers() {
         .toArray()
         .then(values => {
           return values;
-        })
-    }); 
+        });
+    });
 }
 
 function dbActions() {
@@ -124,7 +122,7 @@ function dbActions() {
               });
           }
         });
-      });
+    });
 }
 
 exports.dbActions = dbActions;
