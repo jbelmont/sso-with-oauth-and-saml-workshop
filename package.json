@@ -44,7 +44,9 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.8.0",
     "nock": "^9.0.2",
+    "nyc": "^10.0.0",
     "sinon": "^1.17.6",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "tap-nyan": "^1.1.0"
   }
 }
