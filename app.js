@@ -7,7 +7,7 @@ require(join(__dirname, 'config/config'))['dotEnvConfig'];
 
 const port = process.env['PORT'] || 3000;
 
-var app = restify.createServer({
+const app = restify.createServer({
   certificate: readFileSync(join(__dirname, 'ca/cert.pem')),
   key: readFileSync(join(__dirname, 'ca/key.pem')),
   name: 'SSO with Oauth and SAML'

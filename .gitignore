@@ -12,3 +12,9 @@
 
 # vscode
 /.vscode
+
+# misc
+/selenium-debug.log
+
+# nightwatch
+/reports
