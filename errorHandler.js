@@ -1,12 +1,17 @@
 'use strict';
 
-function generateError(err, moduleName, statusCode) {
+function generateError({err, moduleName, statusCode}) {
   const name = moduleName ? moduleName : '';
-  const stackTrace = err && err.stack 
-        ? err.stack.split('\n') 
-        : new Error(message).stack.split('\n');
+  const stackTrace = err && err.stack
+        ? err.stack.split('\n')
+        : new Error('').stack.split('\n');
   const message = parseMessage(stackTrace, name);
-  const fileInfo = getFileInfo(message);
+  let fileInfo;
+  try {
+    fileInfo = getFileInfo(message);
+  } catch(err) {
+    throw err;
+  }
   const stackMessage = getStackMessage(stackTrace);
   return {
     statusCode,
@@ -21,11 +26,16 @@ function parseMessage(stackTrace, name) {
 }
 
 function getFileInfo(message) {
-  const fileInfo = message[0].split(':');
-  return {
-    lineNumber : fileInfo[1],
-    columnNumber: fileInfo[2]
-  };
+  let fileInfo;
+  try {
+    fileInfo = message[1].split(':');
+    return {
+      lineNumber : fileInfo[1],
+      columnNumber: fileInfo[2]
+    };
+  } catch(err) {
+    throw err;
+  }
 }
 
 function getStackMessage(stack) {
