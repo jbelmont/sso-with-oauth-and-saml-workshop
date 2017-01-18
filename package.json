@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node --harmony app.js",
     "debug": "node-inspector & node --inspect app.js",
-    "test": "ava --verbose",
+    "unit:test": "ava --verbose test/unit-tests/*.js",
+    "integration:test": "ava --verbose test/integration-tests/*.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "e2e": "node --harmony test/nightwatch.runner.js"

@@ -11,7 +11,7 @@ test('check error object returned from errorHandler with no arguments', assert =
 });
 
 test('check error object from errorHandler with proper arugments', assert => {
-  const foo = require('./foo').foo();
+  const foo = require('../helpers').foo();
   const actual = errorHandler.generateError({
     err: foo,
     moduleName: 'foo',
