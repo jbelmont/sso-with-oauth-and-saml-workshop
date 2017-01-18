@@ -3,15 +3,11 @@ const test = require('ava');
 const errorHandler = require('../../errorHandler');
 
 test('check error object returned from errorHandler with no arguments', assert => {
-  try {
-    assert.throws(errorHandler.generateError({
-      err: new Error('unauthorized access'),
-      moduleName: 'access',
-      statusCode: 401
-    }));
-  } catch(err) {
-    assert.pass(true);
-  }
+  assert.throws(() => errorHandler.generateError({
+    err: new Error('unauthorized access'),
+    moduleName: 'access',
+    statusCode: 401
+  }), TypeError);
 });
 
 test('check error object from errorHandler with proper arugments', assert => {

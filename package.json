@@ -31,7 +31,9 @@
   "dependencies": {
     "dotenv": "^2.0.0",
     "jsonwebtoken": "^7.2.1",
+    "passport-saml-restify": "^1.0.5",
     "restify": "^4.3.0",
+    "restify-jwt": "^0.4.0",
     "rethinkdb": "^2.3.3",
     "winston": "^2.3.0"
   },
