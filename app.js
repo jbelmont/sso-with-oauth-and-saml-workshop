@@ -24,3 +24,5 @@ app.listen(port, () => {
 // Load api endpoints.
 require('./routes')(app);
 require('./admin/createToken')(app);
+
+module.exports = app;
