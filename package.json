@@ -54,6 +54,7 @@
     "selenium-server": "^3.0.1",
     "sinon": "^1.17.6",
     "supertest": "^2.0.1",
-    "tap-nyan": "^1.1.0"
+    "tap-nyan": "^1.1.0",
+    "testdouble": "^1.11.0"
   }
 }

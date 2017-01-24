@@ -1,3 +1,5 @@
+'use strict';
+
 const test = require('ava');
 
 const errorHandler = require('../../errorHandler');
@@ -10,7 +12,7 @@ test('check error object returned from errorHandler with no arguments', assert =
   }), TypeError);
 });
 
-test('check error object from errorHandler with proper arugments', assert => {
+test('check error object from errorHandler with proper arguments', assert => {
   const foo = require('../helpers').foo();
   const actual = errorHandler.generateError({
     err: foo,
@@ -20,7 +22,7 @@ test('check error object from errorHandler with proper arugments', assert => {
   const expected = {
     statusCode: 'foo error',
     message: 'Foo Error: Foo',
-    errorLineAndColumn: 'foo:2:10)'
+    errorLineAndColumn: 'foo:4:10)'
   };
   assert.deepEqual(actual, expected, `should return ${expected}`);
 });

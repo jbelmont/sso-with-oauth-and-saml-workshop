@@ -1,3 +1,5 @@
+'use strict';
+
 const test = require('ava');
 const {join} = require('path');
 const nock = require('nock');
