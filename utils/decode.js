@@ -1,6 +1,6 @@
 'use strict';
 
-function decode(jwt) {
+function decodeUnsignedJWT(jwt) {
   const [
     headerB64,
     payloadB64
@@ -13,4 +13,18 @@ function decode(jwt) {
   };
 }
 
-exports.decode = decode;
+function decodeBasicAuth(str) {
+  const usernameAndPassword = str.split(' ')[1];
+  const parseString = new Buffer(usernameAndPassword, 'base64').toString();
+  const [
+    username,
+    password
+  ] = parseString.split(':');
+  return {
+    username,
+    password
+  };
+}
+
+exports.decodeUnsignedJWT = decodeUnsignedJWT;
+exports.decodeBasicAuth = decodeBasicAuth;
