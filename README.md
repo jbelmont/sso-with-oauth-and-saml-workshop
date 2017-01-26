@@ -1,6 +1,12 @@
-# Authentication, Authorization, Oauth, SAML and More explained
+# Authentication, Authorization, Oauth, SAML
 
 ## Basic Authentication with HTTP
+
+> "HTTP/1.0", includes the specification for a Basic Access
+Authentication scheme. This scheme is not considered to be a secure
+method of user authentication (unless used in conjunction with some
+external secure system such as SSL [5]), as the user name and
+password are passed over the network as cleartext.
 
 [Basic Authentication RFC2617](https://tools.ietf.org/html/rfc2617)
 
