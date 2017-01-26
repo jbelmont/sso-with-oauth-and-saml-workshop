@@ -10,6 +10,17 @@ password are passed over the network as cleartext.
 
 [Basic Authentication RFC2617](https://tools.ietf.org/html/rfc2617)
 
+If an HTTP receives an anonymous request for a protected resource it can force the use of Basic authentication by rejecting the request with a 401 (Access Denied) status code and setting the WWW-Authenticate response header as shown below:
+
+```HTTP
+HTTP/1.1 401 Access Denied
+WWW-Authenticate: Basic realm="My Server"
+Content-Length: 0
+```
+
+* :scroll: [Basic Auth Examples](docs/basic-auth.md)
+
+
 ## Digest Schemes
 
 [Digest Schemes RFC2617](https://tools.ietf.org/html/rfc2617)
