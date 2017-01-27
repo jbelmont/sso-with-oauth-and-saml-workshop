@@ -22,10 +22,18 @@ Content-Length: 0
 
 
 ## Digest Schemes
+> the Digest scheme is based on a
+simple challenge-response paradigm. The Digest scheme challenges
+using a nonce value. A valid response contains a checksum (by
+default, the MD5 checksum) of the username, the password, the given
+nonce value, the HTTP method, and the requested URI. In this way, the
+password is never sent in the clear. Just as with the Basic scheme,
+the username and password must be prearranged in some fashion not
+addressed by this document.
 
 [Digest Schemes RFC2617](https://tools.ietf.org/html/rfc2617)
-##
 
+* :scroll: [Digest Schemes Examples](docs/digest-schemes.md)
 
 ## Single Sign-On (SSO) with Oauth and SAML
 
