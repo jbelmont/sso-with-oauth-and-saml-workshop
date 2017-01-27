@@ -26,7 +26,7 @@ const basicAuthExample = (req, res) => {
     res.send(responseCodes['ok'], {
       credentials: decodeString
     });
-  } else if (!authorization) {
+  } else {
     res.setHeader('WWW-Authenticate', 'Basic realm="need login credentials"');
     res.send(responseCodes['unauthorized'], {
       errorMessage: 'Please provide base 64 encoded username and password'

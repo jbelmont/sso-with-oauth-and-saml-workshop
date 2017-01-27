@@ -1,7 +1,7 @@
-## Basic Authentication - The client sends the user name and password as unencrypted base64 encoded text.
+### Basic Authentication - The client sends the user name and password as unencrypted base64 encoded text.
 **Basic Authenthication should only be used with HTTPS, as the password can be easily captured and reused over HTTP.**
 
-### Example of Basic Auth using CURL with neither Authorization header set nor username and password set in url
+#### Example of Basic Auth using CURL with neither Authorization header set nor username and password set in url
 
 ```HTTP
 curl -k -X GET "https://localhost:3000/api/v1/basicAuth"
@@ -28,7 +28,7 @@ returns following response
 }
 ```
 
-#### Providing the following username and password credentials
+##### Providing the following username and password credentials
 Username: `rambo`
 Password: `soldier`
 
@@ -57,4 +57,26 @@ returns following response
     "password": "soldier"
   }
 }
+```
+
+In order to parse The Authorization Header in Chrome and return an object
+```js
+atob('basic cmFtYm86c29sZGllcg=='
+  .split(' ')[1])
+  .split(':')
+  .reduce((prev, curr, idx, arr) =>  {
+    prev[curr] = curr;
+    return prev;
+  }, {});
+```
+
+In order to parse the Authorization Header in Nodejs and return an object
+```node
+const authorization = 'basic cmFtYm86c29sZGllcg=='.split(' ');
+const parseString = new Buffer(authorization[1], 'base64').toString();
+return parseString.split(':')
+  .reduce((prev, curr, idx, arr) =>  {
+    prev[curr] = curr;
+    return prev;
+  }, {});
 ```
