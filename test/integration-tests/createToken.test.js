@@ -3,12 +3,16 @@
 const test = require('ava');
 const {join} = require('path');
 const nock = require('nock');
+
+// Set this for TLS rejection issues
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const {
     responseCodes,
     requestURL,
     endPoints
 } = require(join(__dirname, '../../constants/constants'));
-const request = require('supertest')(requestURL);
+const request = require('supertest');
 
 let postScope, requestBody;
 test.before(t => {
@@ -27,7 +31,7 @@ test.before(t => {
   };
 
   postScope = nock(requestURL, requestPostHeaders)
-        .post('/api/v1/couch/insertDocument/bucks', requestBody)
+        .post(endPoints['createTokenUrl'], requestBody)
         .reply(201, postPayload);
   t.pass(true);
 });
@@ -37,21 +41,18 @@ test.after('cleanup', t => {
   t.pass(true);
 });
 
-test('createToken should return jwt', t => {
+test('createToken should return jwt', async t => {
+  t.plan(3);
   const created = responseCodes['created'];
-  request
-        .post(endPoints['createTokenUrl'])
-        .set({
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        })
-        .send(requestBody)
-        .expect(res => {
-          t.is(res.status, created, '201 Status Code returned');
-          t.truthy(res.body.adminToken, 'Body should have adminToken property');
-        })
-        .end(() => {
-          t.is(postScope.isDone(), true, `POST ${endPoints.createTokenUrl} Nock Spy called`);
-          t.pass();
-        });
+  const req = request.agent(requestURL);
+  const res = await req
+    .post(endPoints['createTokenUrl'])
+    .set({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    })
+    .send(requestBody);
+  t.is(res.status, created, '201 Status Code returned');
+  t.truthy(res.body.adminToken, 'Body should have adminToken property');
+  t.is(postScope.isDone(), true, `POST ${endPoints.createTokenUrl} Nock Spy called`);
 });

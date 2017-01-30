@@ -7,6 +7,7 @@ module.exports = {
   requestURL: 'https://localhost:3000',
   endPoints: {
     createTokenUrl: '/api/v1/createToken',
+    basicAuthUrl: '/api/v1/basicAuth',
     indexRouteUrl: '/'
   }
 };
