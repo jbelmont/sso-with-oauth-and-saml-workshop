@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "e2e": "node --harmony test/nightwatch.runner.js",
-    "test": "nyc ava test/integration-tests/*.js test/unit-tests/*.js",
+    "test": "nyc ava test/integration-tests/createToken.js test/integration-tests/indexRoute.test.js test/unit-tests/*.js",
     "posttest": "nyc report --reporter=lcov"
   },
   "repository": {
@@ -68,6 +68,7 @@
     "exclude": [
       "test/end-to-end-tests/*",
       "test/helpers/*",
+      "test/integration-tests/basicAuth.test.js",
       "test/nightwatch.conf.js",
       "test/nightwatch.runner.js"
     ]
