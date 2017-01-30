@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml.svg?branch=master)](https://travis-ci.org/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml) [![Build Status]
+[![Build Status](https://travis-ci.org/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml.svg?branch=master)](https://travis-ci.org/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml)
 
 # Authentication, Authorization, Oauth, SAML
 
