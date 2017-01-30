@@ -41,18 +41,23 @@ test.after('cleanup', t => {
   t.pass(true);
 });
 
-test('createToken should return jwt', async t => {
+test.cb('createToken should return jwt', t => {
   t.plan(3);
   const created = responseCodes['created'];
   const req = request.agent(requestURL);
-  const res = await req
+  req
     .post(endPoints['createTokenUrl'])
     .set({
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     })
-    .send(requestBody);
-  t.is(res.status, created, '201 Status Code returned');
-  t.truthy(res.body.adminToken, 'Body should have adminToken property');
-  t.is(postScope.isDone(), true, `POST ${endPoints.createTokenUrl} Nock Spy called`);
+    .send(requestBody)
+    .expect(res => {
+      t.is(res.status, created, '201 Status Code returned');
+      t.truthy(res.body.adminToken, 'Body should have adminToken property');
+    })
+    .end(() => {
+      t.is(postScope.isDone(), true, `POST ${endPoints.createTokenUrl} Nock Spy called`);
+      t.end();
+    });
 });
