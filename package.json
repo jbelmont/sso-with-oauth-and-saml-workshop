@@ -12,7 +12,8 @@
     "lint:fix": "eslint . --fix",
     "e2e": "node --harmony test/nightwatch.runner.js",
     "test": "nyc ava test/integration-tests/createToken.js test/integration-tests/indexRoute.test.js test/unit-tests/*.js",
-    "posttest": "nyc report --reporter=lcov"
+    "posttest": "nyc report --reporter=text-lcov",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-eslint": "^7.1.1",
+    "coveralls": "^2.11.15",
     "eslint": "^3.12.2",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
