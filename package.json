@@ -10,7 +10,9 @@
     "integration:test": "ava --verbose test/integration-tests/*.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "e2e": "node --harmony test/nightwatch.runner.js"
+    "e2e": "node --harmony test/nightwatch.runner.js",
+    "test": "nyc ava test/integration-tests/*.js test/unit-tests/*.js",
+    "posttest": "nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
@@ -56,5 +58,18 @@
     "supertest": "^2.0.1",
     "tap-nyan": "^1.1.0",
     "testdouble": "^1.11.0"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "exclude": [
+      "test/end-to-end-tests/*",
+      "test/helpers/*",
+      "test/nightwatch.conf.js",
+      "test/nightwatch.runner.js"
+    ]
   }
 }

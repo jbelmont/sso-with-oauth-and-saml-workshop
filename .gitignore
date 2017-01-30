@@ -19,3 +19,7 @@
 
 # nightwatch
 /reports
+
+# Code Coverage
+/.nyc_output
+/coverage
