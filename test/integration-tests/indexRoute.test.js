@@ -38,20 +38,21 @@ test.after('cleanup', t => {
 });
 
 
-test('index route should return a list of users', assert => {
+test.cb('index route should return a list of users', assert => {
+  assert.plan(4);
   const ok = responseCodes['ok'];
   request
-    .get(requestURL)
+    .get('/')
     .set({
       'Accept': 'application/json'
     })
     .expect(res => {
       assert.is(res.status, ok, '200 Status Code returned');
       assert.truthy(res.body.users, 'Body should have users property');
-      assert.is(res.body.users, postPayload, `should return ${postPayload}`);
+      assert.deepEqual(res.body.users, postPayload['users'], `should return ${postPayload}`);
     })
     .end(() => {
       assert.is(getScope.isDone(), true, `GET ${endPoints.indexRouteUrl} Nock Spy called`);
-      assert.pass(true);
+      assert.end();
     });
 });
