@@ -13,7 +13,9 @@
     "e2e": "node --harmony test/nightwatch.runner.js",
     "test": "nyc ava test/integration-tests/createToken.js test/integration-tests/indexRoute.test.js test/unit-tests/*.js",
     "posttest": "nyc report --reporter=text-lcov",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -41,7 +43,8 @@
     "restify": "^4.3.0",
     "restify-jwt": "^0.4.0",
     "rethinkdb": "^2.3.3",
-    "winston": "^2.3.0"
+    "winston": "^2.3.0",
+    "snyk": "^1.24.6"
   },
   "devDependencies": {
     "ava": "^0.17.0",
@@ -74,5 +77,6 @@
       "test/nightwatch.conf.js",
       "test/nightwatch.runner.js"
     ]
-  }
+  },
+  "snyk": true
 }
