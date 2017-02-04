@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "e2e": "node --harmony test/nightwatch.runner.js",
-    "test": "nyc ava test/integration-tests/createToken.js test/integration-tests/indexRoute.test.js test/unit-tests/*.js",
+    "test": "nyc ava test/integration-tests/*.js test/unit-tests/*.js",
     "posttest": "nyc report --reporter=text-lcov",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "snyk-protect": "snyk protect",

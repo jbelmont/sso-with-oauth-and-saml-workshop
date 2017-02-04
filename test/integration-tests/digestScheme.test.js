@@ -2,7 +2,7 @@
 
 const test = require('ava');
 const {join} = require('path');
-require('../../app');
+const nock = require('nock');
 
 const {
     responseCodes,
@@ -15,8 +15,19 @@ const request = require('supertest');
 const digestSchemeUrl = endPoints['digestSchemeUrl'];
 
 test.cb('digestScheme endpoint should return 401 and required headers when they are missing', assert => {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-  assert.plan(2);
+  assert.plan(3);
+  const requestGetHeaders = {
+    reqheaders: {
+      'Authorization': 'Digest username="rambo", realm="https://localhost:3000/api/v1/digestScheme"'
+    }
+  };
+
+  const getScope = nock(requestURL, requestGetHeaders)
+    .get(digestSchemeUrl)
+    .reply(401, null, {
+      'www-authenticate': 'Digest realm="https://localhost:3000/api/v1/digestScheme", qop="auth, auth-int", algorithm=MD5, nonce="undefined", opaque="undefined"'
+    });
+
   const unauthorized = responseCodes['unauthorized'];
   const req = request.agent(requestURL);
   req
@@ -32,13 +43,27 @@ test.cb('digestScheme endpoint should return 401 and required headers when they 
       );
     })
     .end(() => {
+      assert.is(getScope.isDone(), true, `GET ${digestSchemeUrl} Nock Spy called`);
       assert.end();
     });
 });
 
 test.cb('digestScheme endpoint should return 200 and authentication property', assert => {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-  assert.plan(2);
+  assert.plan(3);
+  const requestGetHeaders = {
+    reqheaders: {
+      'Authorization': 'Digest username="rambo", realm="https://localhost:3000/api/v1/digestScheme", nonce="Et2azM0urkTJmDb18rZnnwQb3", uri="/api/v1/digestScheme", response="98272be7c8fd10f0131954a3231b1341", opaque="cmFtYm86c29sZGllcjphcm15"'
+    }
+  };
+
+  const responseBody = {
+    authenticated: true
+  };
+
+  const getScope = nock(requestURL, requestGetHeaders)
+    .get(digestSchemeUrl)
+    .reply(200, responseBody);
+
   const ok = responseCodes['ok'];
   const req = request.agent(requestURL);
   req
@@ -51,6 +76,7 @@ test.cb('digestScheme endpoint should return 200 and authentication property', a
       assert.truthy(res.body.authenticated);
     })
     .end(() => {
+      assert.is(getScope.isDone(), true, `GET ${digestSchemeUrl} Nock Spy called`);
       assert.end();
     });
 });
