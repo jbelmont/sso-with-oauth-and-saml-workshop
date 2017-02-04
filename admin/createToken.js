@@ -6,7 +6,7 @@ const {readFileSync} = require('fs');
 const winston = require('winston');
 const jwt = require('jsonwebtoken');
 
-const {responseCodes} = require('../constants/constants');
+const {responseCodes} = require('../constants');
 
 const PATH = '/api/v1/';
 

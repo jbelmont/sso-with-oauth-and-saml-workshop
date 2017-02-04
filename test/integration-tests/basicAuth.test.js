@@ -11,7 +11,7 @@ const {
     responseCodes,
     requestURL,
     endPoints
-} = require(join(__dirname, '../../constants/constants'));
+} = require(join(__dirname, '../../constants'));
 const basicAuthUrl = endPoints['basicAuthUrl'];
 
 const request = require('supertest');

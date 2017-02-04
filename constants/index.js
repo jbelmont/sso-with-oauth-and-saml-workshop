@@ -8,6 +8,7 @@ module.exports = {
   endPoints: {
     createTokenUrl: '/api/v1/createToken',
     basicAuthUrl: '/api/v1/basicAuth',
+    digestSchemeUrl: '/api/v1/digestScheme',
     indexRouteUrl: '/'
   }
 };

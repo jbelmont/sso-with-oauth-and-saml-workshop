@@ -8,7 +8,7 @@ const {
     responseCodes,
     requestURL,
     endPoints
-} = require(join(__dirname, '../../constants/constants'));
+} = require(join(__dirname, '../../constants'));
 
 const request = require('supertest')(requestURL);
 
