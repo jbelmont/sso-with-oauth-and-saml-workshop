@@ -49,3 +49,7 @@ The service authenticates the end user for all the applications the user has bee
 
 [SSO](https://www.sitepoint.com/single-sign-on-explained/)
 **A good example of the use of SSO is in Google’s services. You need only be signed in to one primary Google account to access different services like YouTube, Gmail, Google+, Google Analytics, and more.**
+
+
+### SAML
+Security Assertion Markup Language

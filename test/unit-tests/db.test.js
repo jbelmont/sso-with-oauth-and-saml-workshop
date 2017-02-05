@@ -1,9 +1,7 @@
 'use strict';
 
 const test = require('ava');
-
 const td = require('../helpers').td;
-require('../../config/config')['dotEnvConfig'];
 
 let dbActions;
 test.before(() => {
