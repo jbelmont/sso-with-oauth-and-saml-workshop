@@ -1,10 +1,9 @@
 'use strict';
 
-const {join} = require('path');
 const test = require('ava');
 
 const td = require('../helpers').td;
-require(join(__dirname, '../../config/config'))['dotEnvConfig'];
+require('../../config/config')['dotEnvConfig'];
 
 let dbActions;
 test.before(() => {

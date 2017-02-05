@@ -6,3 +6,4 @@ serious flaws of Basic authentication.
 
 [Digest Access Authentication](https://tools.ietf.org/html/rfc2617#page-6)
 
+## Digest Authentication

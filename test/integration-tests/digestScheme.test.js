@@ -25,7 +25,7 @@ test.cb('digestScheme endpoint should return 401 and required headers when they 
   const getScope = nock(requestURL, requestGetHeaders)
     .get(digestSchemeUrl)
     .reply(401, null, {
-      'www-authenticate': 'Digest realm="https://localhost:3000/api/v1/digestScheme", qop="auth, auth-int", algorithm=MD5, nonce="undefined", opaque="undefined"'
+      'www-authenticate': 'Digest realm="https://localhost:3000/api/v1/digestScheme", qop="auth", algorithm=MD5, nonce="undefined", opaque="undefined"'
     });
 
   const unauthorized = responseCodes['unauthorized'];
@@ -39,7 +39,7 @@ test.cb('digestScheme endpoint should return 401 and required headers when they 
       assert.is(res.status, unauthorized, '401 Status Code should be returned');
       assert.is(
         res.headers['www-authenticate'],
-        'Digest realm="https://localhost:3000/api/v1/digestScheme", qop="auth, auth-int", algorithm=MD5, nonce="undefined", opaque="undefined"'
+        'Digest realm="https://localhost:3000/api/v1/digestScheme", qop="auth", algorithm=MD5, nonce="undefined", opaque="undefined"'
       );
     })
     .end(() => {
@@ -52,7 +52,7 @@ test.cb('digestScheme endpoint should return 200 and authentication property', a
   assert.plan(3);
   const requestGetHeaders = {
     reqheaders: {
-      'Authorization': 'Digest username="rambo", realm="https://localhost:3000/api/v1/digestScheme", nonce="Et2azM0urkTJmDb18rZnnwQb3", uri="/api/v1/digestScheme", response="98272be7c8fd10f0131954a3231b1341", opaque="cmFtYm86c29sZGllcjphcm15"'
+      'Authorization': 'Digest username="rambo", realm="https://localhost:3000/api/v1/digestScheme", nonce="7ypf/xlj9XXwfDPEoM4URrv/xwf94BcCAzFZH4GiTo0v", uri="/api/v1/digestScheme", response="adc91a91ffaa68815d5a5d8e4ed8d9e9", opaque="cmFtYm86c29sZGllcjphcm15"'
     }
   };
 
@@ -69,7 +69,7 @@ test.cb('digestScheme endpoint should return 200 and authentication property', a
   req
     .get(digestSchemeUrl)
     .set({
-      'Authorization': 'Digest username="rambo", realm="https://localhost:3000/api/v1/digestScheme", nonce="Et2azM0urkTJmDb18rZnnwQb3", uri="/api/v1/digestScheme", response="98272be7c8fd10f0131954a3231b1341", opaque="cmFtYm86c29sZGllcjphcm15"'
+      'Authorization': 'Digest username="rambo", realm="https://localhost:3000/api/v1/digestScheme", nonce="7ypf/xlj9XXwfDPEoM4URrv/xwf94BcCAzFZH4GiTo0v", uri="/api/v1/digestScheme", response="adc91a91ffaa68815d5a5d8e4ed8d9e9", opaque="cmFtYm86c29sZGllcjphcm15"'
     })
     .expect(res => {
       assert.is(res.status, ok, '200 Status Code should be returned');

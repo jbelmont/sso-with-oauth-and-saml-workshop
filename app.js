@@ -3,7 +3,7 @@ const {readFileSync} = require('fs');
 const {join} = require('path');
 
 // Load Environment Variables
-require(join(__dirname, 'config/config'))['dotEnvConfig'];
+require('./config/config')['dotEnvConfig'];
 
 const port = process.env['PORT'] || 3000;
 
