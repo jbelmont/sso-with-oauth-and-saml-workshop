@@ -51,5 +51,15 @@ The service authenticates the end user for all the applications the user has bee
 **A good example of the use of SSO is in Google’s services. You need only be signed in to one primary Google account to access different services like YouTube, Gmail, Google+, Google Analytics, and more.**
 
 
-### SAML
-Security Assertion Markup Language
+### SAML (Security Assertion Markup Language)
+> Security Assertion Markup Language (SAML, pronounced sam-el) is an XML-based,
+open-standard data format for exchanging authentication and authorization data between parties,
+in particular, between an identity provider and a service provider.
+
+[SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language)
+
+SAML is an XML-based framework that allows identity and security information to be shared across security domains.
+
+The Assertion, an XML security token, is a fundamental construct of SAML that is often adopted for use in other protocols and specifications.
+
+* :scroll: [SAML Examples](docs/saml.md)
