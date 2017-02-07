@@ -75,7 +75,9 @@
       "test/helpers/*",
       "test/integration-tests/basicAuth.test.js",
       "test/nightwatch.conf.js",
-      "test/nightwatch.runner.js"
+      "test/nightwatch.runner.js",
+      "config/config.js",
+      "errorHandler.js"
     ]
   },
   "snyk": true
