@@ -17,12 +17,18 @@ test.before('setup SAML entrypoint', () => {
   };
 });
 
-test.cb('get the right host', t => {
-  t.plan(1);
+test.cb('getAuthorizeUrl should return url and properties', t => {
+  t.plan(4);
   saml.getAuthorizeUrl(req, (err, target) => {
-    const actual = url.parse(target).host;
+    const actual = url.parse(target);
     const expected = 'localhost:3000';
-    t.is(actual, expected, `should equal ${expected}`);
+
+    t.is(actual['host'], expected, `should equal ${actual['host']}`);
+    t.is(actual['protocol'], 'https:', `should equal ${actual['protocol']}`);
+    t.is(actual['pathname'], '/api/v1/saml', `should equal ${actual['pathname']}`);
+
+    const queryKey = Object.keys(url.parse(target, true).query)[0];
+    t.is(queryKey, 'SAMLRequest');
     t.end();
   });
 });

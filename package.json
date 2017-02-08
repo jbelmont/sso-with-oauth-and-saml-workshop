@@ -36,15 +36,16 @@
   },
   "homepage": "https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml#readme",
   "dependencies": {
+    "chromedriver": "^2.25.1",
     "dotenv": "^2.0.0",
     "jsonwebtoken": "^7.2.1",
+    "passport": "^0.3.2",
     "passport-saml-restify": "^1.0.5",
-    "chromedriver": "^2.25.1",
     "restify": "^4.3.0",
     "restify-jwt": "^0.4.0",
     "rethinkdb": "^2.3.3",
-    "winston": "^2.3.0",
-    "snyk": "^1.24.6"
+    "snyk": "^1.24.6",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
