@@ -5,7 +5,9 @@ const parseHeader = require('../utils/parseHeader').parseHeader;
 const md5 = require('../utils/md5').md5;
 
 // Load Environment Variables
-require('../config/config')['dotEnvConfig'];
+const path = require('path');
+
+require(path.join(__dirname, '../config/config'))['dotEnvConfig'];
 
 const PATH = '/api/v1/';
 
