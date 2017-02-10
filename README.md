@@ -63,3 +63,7 @@ SAML is an XML-based framework that allows identity and security information to 
 The Assertion, an XML security token, is a fundamental construct of SAML that is often adopted for use in other protocols and specifications.
 
 * :scroll: [SAML Examples](docs/saml.md)
+
+### Oauth and OpenID Connect
+
+> OAuth is an open standard for authorization, commonly used as a way for Internet users to authorize websites or applications to access their information on other websites but without giving them the passwords.
