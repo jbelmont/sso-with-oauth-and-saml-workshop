@@ -50,8 +50,13 @@ The service authenticates the end user for all the applications the user has bee
 [SSO](https://www.sitepoint.com/single-sign-on-explained/)
 **A good example of the use of SSO is in Google’s services. You need only be signed in to one primary Google account to access different services like YouTube, Gmail, Google+, Google Analytics, and more.**
 
+### Oauth
 
-### SAML (Security Assertion Markup Language)
+> OAuth is an open standard for authorization, commonly used as a way for Internet users to authorize websites or applications to access their information on other websites but without giving them the passwords.
+
+* :scroll: [OAuth](docs/oauth.md)
+
+#### SAML (Security Assertion Markup Language)
 > Security Assertion Markup Language (SAML, pronounced sam-el) is an XML-based,
 open-standard data format for exchanging authentication and authorization data between parties,
 in particular, between an identity provider and a service provider.
@@ -64,6 +69,8 @@ The Assertion, an XML security token, is a fundamental construct of SAML that is
 
 * :scroll: [SAML Examples](docs/saml.md)
 
-### Oauth and OpenID Connect
+#### JSON Web Token (JWT)
 
-> OAuth is an open standard for authorization, commonly used as a way for Internet users to authorize websites or applications to access their information on other websites but without giving them the passwords.
+[JWT](https://tools.ietf.org/html/rfc7519)
+
+* :scroll: [JWT Examples](docs/jwt.md)
