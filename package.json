@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml.git"
+    "url": "git+https://github.com/jbelmont/sso-with-oauth-and-saml.git"
   },
   "keywords": [
     "nodejs",
@@ -32,9 +32,9 @@
   "author": "Jean-Marcel Belmont",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml/issues"
+    "url": "https://github.com/jbelmont/sso-with-oauth-and-saml/issues"
   },
-  "homepage": "https://github.com/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml#readme",
+  "homepage": "https://github.com/jbelmont/sso-with-oauth-and-saml#readme",
   "dependencies": {
     "chromedriver": "^2.25.1",
     "dotenv": "^2.0.0",

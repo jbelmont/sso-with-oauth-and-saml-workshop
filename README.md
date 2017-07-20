@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml.svg?branch=master)](https://travis-ci.org/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml)
-[![Coverage Status](https://coveralls.io/repos/github/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml/badge.svg?branch=master)](https://coveralls.io/github/Code-Craftsmanship-Saturdays/sso-with-oauth-and-saml?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/code-craftsmanship-saturdays/sso-with-oauth-and-saml/badge.svg)](https://snyk.io/test/github/code-craftsmanship-saturdays/sso-with-oauth-and-saml)
+[![Build Status](https://travis-ci.org/jbelmont/sso-with-oauth-and-saml.svg?branch=master)](https://travis-ci.org/jbelmont/sso-with-oauth-and-saml)
+[![Coverage Status](https://coveralls.io/repos/github/jbelmont/sso-with-oauth-and-saml/badge.svg?branch=master)](https://coveralls.io/github/jbelmont/sso-with-oauth-and-saml?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/jbelmont/sso-with-oauth-and-saml/badge.svg)](https://snyk.io/test/github/jbelmont/sso-with-oauth-and-saml)
 
 # Authentication, Authorization, Oauth, SAML
 
