@@ -38,7 +38,7 @@
   "dependencies": {
     "chromedriver": "^2.25.1",
     "dotenv": "^2.0.0",
-    "jsonwebtoken": "^7.2.1",
+    "jsonwebtoken": "^8.0.0",
     "passport": "^0.3.2",
     "passport-saml-restify": "^1.0.5",
     "restify": "^4.3.0",
