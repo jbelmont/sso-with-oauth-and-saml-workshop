@@ -44,7 +44,7 @@
     "restify": "^4.3.0",
     "restify-jwt": "^0.4.0",
     "rethinkdb": "^2.3.3",
-    "snyk": "^1.24.6",
+    "snyk": "^1.232.0",
     "winston": "^2.3.0"
   },
   "devDependencies": {
