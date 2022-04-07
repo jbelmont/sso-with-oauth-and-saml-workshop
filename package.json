@@ -45,7 +45,7 @@
     "restify-jwt": "^0.4.0",
     "rethinkdb": "^2.3.3",
     "snyk": "^1.24.6",
-    "winston": "^2.3.0"
+    "winston": "^3.3.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
